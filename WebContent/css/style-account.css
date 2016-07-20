@@ -1,0 +1,253 @@
+@font-face {
+  font-family: 'FontAwesome';
+  src: url('../fonts/fontawesome-webfont.eot?v=4.0.3');
+  src: url('../fonts/fontawesome-webfont.eot?#iefix&v=4.0.3') format('embedded-opentype'), url('../fonts/fontawesome-webfont.woff?v=4.0.3') format('woff'), url('../fonts/fontawesome-webfont.ttf?v=4.0.3') format('truetype'), url('../fonts/fontawesome-webfont.svg?v=4.0.3#fontawesomeregular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.dropdown-own-color{
+    background-color: #2196f3!important;
+}
+
+.panel-own {
+    cursor: pointer;
+}
+#page-content-wrapper{
+    min-width: 400px;
+}
+
+#overview-body{
+    
+}
+#connected-accounts-body{
+    display:none;
+}
+#saved-threads-body{
+    display:none;
+}
+
+.overview-label {
+    float: left;
+    right: 0px;
+    width: 100px;
+    padding-top: 12px !important;
+    text-align:right;
+    
+}
+
+.input-overview {
+    float: left;
+    width: 60%;
+}
+
+.own-checkbox {
+    float:left;
+}
+
+.own-form {
+    width: 80%;
+    min-width: 300px;
+    margin: 0 auto;
+}
+
+#inputPassword {
+    outline:none;
+}
+
+.container-padding {
+    padding-top: 1.5%;
+}
+
+.btn-file {
+    position: relative;
+    overflow: hidden;
+}
+.btn-file input[type=file] {
+    position: absolute;
+    top: 0;
+    right: 0;
+    min-width: 100%;
+    min-height: 100%;
+    font-size: 100px;
+    text-align: right;
+    filter: alpha(opacity=0);
+    opacity: 0;
+    outline: none;
+    background: white;
+    cursor: inherit;
+    display: block;
+}
+
+#user-image{
+  max-width:120px;
+  max-height:120px;
+}
+
+#overview-body {
+    padding-left: 9%;
+}
+.social:hover{
+    text-decoration: none;
+}
+.social{
+    height:50px;
+    display: inline-block;
+    position: relative;
+    width: 100%;
+    padding-right: 16px;
+    margin-bottom: 16px;
+    margin-right: 16px;
+    background-color: rgba(231, 231, 231, 0.6);
+    font-family: FontAwesome;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+
+    }
+
+    nav{
+	  padding-top: 8px;
+	  padding-left: 8px;
+	  padding-right: 8px;
+    }
+
+    nav ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    }
+
+    nav ul li{
+    display: inline;
+    }
+
+    nav ul li a:hover{
+	   opacity: 0.7;
+	  }
+
+    nav ul li a.twitter{
+    /*border-left: 50px solid #00a0d1;*/
+	  color: #00a0d1;
+    }
+
+	  nav ul li a.facebook{
+    /*border-left: 50px solid #365998;*/
+	  color: #365998;
+    }
+	
+	  nav ul li a.google{
+    /*border-left: 50px solid #db4a39;*/
+	  color: #db4a39;
+    }
+	
+    nav ul li a.instagram{
+    /*border-left: 50px solid #634d40;*/
+	  color: #634d40;
+    }
+
+    nav ul li a.tumblr{
+   /* border-left: 50px solid #34526f;*/
+	  color: #34526f;
+    }
+
+    nav ul li a.linkedin{
+    /*border-left: 50px solid #0e76a8;*/
+	  color: #0e76a8;
+    }
+
+.symbol{
+    float: right;
+    margin-top: -17px;
+}
+.left-logo {
+    content: "\f099";
+}
+.icon-left{
+    height: 100%;
+    min-width:50px;
+    float: left;
+}
+
+.own-fa{
+    color: white;
+    line-height: 4.0;
+    margin-left: 43%;
+}
+
+.name-right{
+    font-size:14px;
+    line-height: 3.6;
+    width: 75px;
+    margin-left: 10px;
+    float: left;
+}
+
+.google > div:first-child  {
+    background-color: #db4a39;
+}
+
+.tumblr > div:first-child  {
+    background-color: #34526f;
+}
+
+.facebook > div:first-child  {
+    background-color: #365998;
+}
+
+.twitter > div:first-child  {
+    background-color: #00a0d1;;
+}
+
+.instagram > div:first-child  {
+    background-color: #634d40;
+}
+
+.linkedin > div:first-child  {
+    background-color: #0e76a8;
+}
+
+.status{
+    float: right;
+    height: 50px;
+    width: 100px;
+    margin-top: 14px;
+    margin-right: 3%;
+}
+.own-label {
+    font-size: 17px;
+}
+.own-filter{
+    float:right;
+    margin-top:12px;
+}
+
+.section-title h4{
+    color: #336C39;
+    font-weight: 800;
+    margin-top: 25px;
+    margin-left: 20px;
+    margin-bottom: 35px;
+}
+
+#page-content-wrapper .culoareFundal .container-fluid{
+    margin-right: auto !important;
+    margin-left: auto !important;
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+}
+
+.section-title{
+    width: 100% !important;
+}
+
+.own-navbar-header{
+    width: 70%;
+    float: left;
+    margin-left: 15px;
+}
+
+.own-navbar-brand{
+    margin-left:15px !important;
+}

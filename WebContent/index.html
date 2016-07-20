@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Threads Over the World</title>
+
+  <!-- Bootstrap Core CSS -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/taggle.min.css" rel="stylesheet">
+  <!-- Custom CSS -->
+  <link href="css/style-login.css" rel="stylesheet">
+  <link href="css/simple-sidebar.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
+  <link href="css/fontawesome.css" rel="stylesheet">     
+<!--  <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">     -->
+</head>
+
+      <body>
+        
+        <div id="wrapper">
+         <nav id="header" class="navbar navbar-fixed-top header minWidth600px minimize height64px" role="navigation" style="left: 0px;">
+          
+          <div id="left-side" class="left-side top7px">
+           <button href="#menu-toggle" class="btn btn-default" id="menu-toggle" data-target=".navbar-ex1-collapse">SideBar <span class="glyphicon glyphicon-menu-hamburger"></span></button>
+         </div>
+         <div class="logo height100px" id="logo"><span class="litera">T</span><span id="logo1" class="piece hidden2">hreads&nbsp;</span><span class="litera">O</span><span id="logo2" class="piece hidden2">ver&nbsp;</span><span class="litera">T</span><span id="logo3" class="piece hidden2">he&nbsp;</span><span class="litera">W</span><span id="logo4" class="piece hidden2">orld</span>
+          <br>
+          <div id="moto" class="moto" style="display: none;">The place where you can speak freely!</div>
+        </div>
+        <div id="right-side" class="right-side top7px">
+          <button class="btn btn-default" id="sign-in-button" data-toggle="modal" data-target="#myModal">Sign In</button>
+        </div>
+      </nav>
+
+      <!-- Sidebar -->
+      <div id="sidebar-wrapper">
+        <div class="sidebar-nav">
+          <div class="list-group">
+              <a href="#" class="list-group-item active list-color">
+                Hot
+              </a>
+              <a href="#" class="list-group-item list-normal">Grecia <span class="badge">RO</span></a></li>
+              </a>
+              <a href="#" class="list-group-item list-normal">Bac2015 <span class="badge">EN</span></a></li>
+              </a>
+              <a href="#" class="list-group-item list-normal">DNA <span class="badge">RO</span></a></li>
+              </a>
+              <a href="#" class="list-group-item list-normal">Ponta <span class="badge">EN</span></a></li>
+              </a>
+          </div>
+          <div class="list-group">
+              <a href="#" class="list-group-item active list-color2">
+                Favorites
+              </a>
+              <a href="#" class="list-group-item list-normal">Muzica <span class="badge">RO</span></a></li>
+              </a>
+              <a href="#" class="list-group-item list-normal">Arta <span class="badge">RO</span></a></li>
+              </a>
+          </div> 
+          <div class="list-group">
+              <a href="#" class="list-group-item active list-color3">
+                My Threads
+              </a>
+              <a href="#" class="list-group-item list-normal">Romania la inceputul secolului in papuci... <span class="badge">RO</span></a></li>
+              </a>
+              <a href="#" class="list-group-item list-normal">Check how to do dance on.. <span class="badge">EN</span></a></li>
+              </a>
+              <a href="#" class="list-group-item list-normal">Vezi acum stirea anului... <span class="badge">RO</span></a></li>
+              </a>
+          </div> 
+          
+          
+        </div>
+      </div>
+      <div class="post-options">
+        <ul class="list-group">
+          
+          <a href="#" class="list-group-item">
+            <span class="glyphicon glyphicon-file"></span> Documents <span class="badge">145</span>
+          </a>
+          <a href="#" class="list-group-item">
+            <span class="glyphicon glyphicon-music"></span> Music <span class="badge">50</span>
+          </a>
+          <a href="#" class="list-group-item">
+            <span class="glyphicon glyphicon-film"></span> Videos <span class="badge">8</span>
+          </a>
+        </ul>
+      </div>
+<div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-body" style="padding-bottom:0px;">
+    	<div class="row">
+				<div class="panel panel-login" style="margin-bottom:0px;">
+					<div class="panel-heading">
+						<div class="row">
+							<div class="col-xs-6">
+								<a href="#" class="active" id="login-form-link">Login</a>
+							</div>
+							<div class="col-xs-6">
+								<a href="#" id="register-form-link">Register</a>
+							</div>
+						</div>
+						<hr>
+					</div>
+					<div class="panel-body" style="padding-bottom: 20px">
+						<div class="row">
+							<div class="col-lg-12">
+								<form id="login-form" action="" method="post" role="form" style="display: block;">
+									<div class="form-group">
+										<input type="text" name="username" id="username" tabindex="1" class="form-control" placeholder="Username" value="">
+									</div>
+									<div class="form-group">
+										<input type="password" name="password" id="password" tabindex="2" class="form-control" placeholder="Password">
+									</div>
+									<div class="form-group text-center">
+										<input type="checkbox" tabindex="3" class="" name="remember" id="remember">
+										<label for="remember"> Remember Me</label>
+									</div>
+									<div class="form-group">
+										<div class="row">
+											<div class="col-sm-6 col-sm-offset-3">
+												<input type="submit" name="login-submit" id="login-submit" tabindex="4" class="form-control btn btn-login" value="Log In">
+											</div>
+										</div>
+									</div>
+									<div class="form-group">
+										<div class="row">
+											<div class="col-lg-12">
+												<div class="text-center">
+													<a href="" tabindex="5" class="forgot-password">Forgot Password?</a>
+												</div>
+											</div>
+										</div>
+									</div>
+                                    
+                                    
+                                    
+                                    
+                                    <div class="row omb_row-sm-offset-3 omb_socialButtons">
+                                    <div class="col-xs-4 col-sm-2">
+                                        <a href="#" class="btn btn-lg btn-block omb_btn-facebook">
+                                            <i class="fa fa-facebook visible-xs"></i>
+                                            <span id="facebook-text">Facebook</span>
+                                        </a>
+                                    </div>
+                                    <div class="col-xs-4 col-sm-2">
+                                        <a href="#" class="btn btn-lg btn-block omb_btn-twitter">
+                                            <i class="fa fa-twitter visible-xs"></i>
+                                            <span id="twitter-text" >Twitter</span>
+                                        </a>
+                                    </div>	
+                                    <div class="col-xs-4 col-sm-2">
+                                        <a href="#" class="btn btn-lg btn-block omb_btn-google">
+                                            <i class="fa fa-google-plus visible-xs"></i>
+                                            <span id="google-text" >Google+</span>
+                                        </a>
+                                    </div>	
+                                     
+                                </div>
+
+                                
+								</form>
+								<form id="register-form" action="" method="post" role="form" style="display: none;">
+									<div class="form-group">
+										<input type="text" name="username" id="username" tabindex="1" class="form-control" placeholder="Username" value="">
+									</div>
+									<div class="form-group">
+										<input type="email" name="email" id="email" tabindex="1" class="form-control" placeholder="Email Address" value="">
+									</div>
+									<div class="form-group">
+										<input type="password" name="password" id="password" tabindex="2" class="form-control" placeholder="Password">
+									</div>
+                                    
+                                   
+								
+									<div class="form-group">
+										<div class="row">
+											<div class="col-sm-6 col-sm-offset-3">
+												<input type="submit" name="register-submit" id="register-submit" tabindex="4" class="form-control btn btn-register" value="Register Now">
+											</div>
+										</div>
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+		</div>
+        </div>
+      </div>
+    </div>
+  </div>
+      <!-- /#sidebar-wrapper -->
+      <a class="btn btn-primary btn-circle btn-lg fixed align-button-left"><span class="glyphicon glyphicon-plus" style="  top: 4px"></span> </a>
+      <!-- Page Content -->
+      <div id="page-content-wrapper">
+
+
+    <div class="input textarea clearfix example1 textarea-own" onkeydown="checkLength()" onkeyup="checkLength()" onclick="checkLength()"></div>
+          
+        <div class="culoareFundal">
+            
+          <div class="container-fluid">
+            <div class="section-title"><h4>Section 3</h4>
+              </div>
+            <div class="filter">
+                <div class="btn-group">
+                  <a href="#" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                    Filter
+                    <span class="caret"></span>
+                  </a>
+                  <ul class="dropdown-menu">
+                    <li><a href="#">Time</a></li>
+                    <li><a href="#">Section</a></li>
+                    <li><a href="#">Language</a></li>
+                   </ul>
+                </div>
+            </div>
+            <div class="clear"></div>
+              
+        
+            <div class="thread" >
+              <div class="img-thread">
+                <img src="http://i1-news.softpedia-static.com/images/news2/blackberry-to-launch-multiple-android-based-smartphone-in-h2-2015-report-1.jpg">
+              </div>
+              <div class="title-thread ">
+                <p>This template has a responsive menu toggling system. The menu will appear collapsed on smaller screens, and will appear non-collapsed on larger screens. When toggle</p>
+              </div>
+              <div class="misc-thread">
+                    <span class="author-thread">by<a href="#">Alin</a></span>
+                    <span class="date-thread"><a href="#"><abbr class="timeago" title="2008-07-17T09:24:17Z">July 17, 2008</abbr></a></span>
+                    <span class="tags-thread"> <a href="">ana</a> <a href="">mere</a> <a href="">nu</a></span>
+                    <span class="upVote-thread"><span class="glyphicon glyphicon-thumbs-up custom-thumbs-up"></span>662</span>
+                    <span class="downVote-thread"><span class="glyphicon glyphicon-thumbs-down custom-thumbs-down"></span>400</span>
+                    <span class="ratting-thread"> <span class="glyphicon glyphicon-star-empty custom-star"></span>62</span>
+                    <span class="nrComments-thread"><span class="glyphicon glyphicon-comment custom-comment"></span>56</span>
+                    <span class="section-thread custom-section">SPORT</span>
+                  <div class="clear"></div>
+              </div>
+              <p class="lead description-thread">This template has a responsive menu toggling system. The menu will appear collapsed on smaller screens, and will appear non-collapsed on larger screens. When toggled using the button below, the menu will appear/disappear. On small screens, the page content will be pushed off canvas.
+                <button class="btn btn-default readMore-thread">Read more & Discuss</button>
+                <div style="clear:both;"></div>
+              </p>
+            </div>
+
+            <div class="thread">
+              <div class="img-thread">
+                <img src="http://i1-news.softpedia-static.com/images/news2/comic-con-2015-first-video-from-sherlock-christmas-special-screens-486563-2.jpg">
+              </div>
+              <div class="title-thread ">
+                <p>This template has a responsive menu toggling system. The menu will appear collapsed on smaller screens, and will appear non-collapsed on larger screens. When toggle</p>
+              </div>
+              <div class="misc-thread">
+                    <span class="author-thread">by<a href="#">Alin</a></span>
+                    <span class="date-thread"><a href="#"><abbr class="timeago" title="2015-07-12T09:24:17Z">July 17, 2008</abbr></a></span>
+                    <span class="tags-thread"> <a href="">ana</a> <a href="">mere</a> <a href="">nu</a></span>
+                    <span class="upVote-thread"><span class="glyphicon glyphicon-thumbs-up custom-thumbs-up"></span>662</span>
+                    <span class="downVote-thread"><span class="glyphicon glyphicon-thumbs-down custom-thumbs-down"></span>400</span>
+                    <span class="ratting-thread"> <span class="glyphicon glyphicon-star-empty custom-star"></span>62</span>
+                    <span class="nrComments-thread"><span class="glyphicon glyphicon-comment custom-comment"></span>56</span>
+                    <span class="section-thread custom-section">SPORT</span>
+                  </div>
+              <p class="lead description-thread">This template has a responsive menu toggling system. The menu will appear collapsed on smaller screens, and will appear non-collapsed on larger screens. When toggled using the button below, the menu will appear/disappear. On small screens, the page content will be pushed off canvas.
+                <button class="btn btn-default readMore-thread">Read more & Discuss</button>
+                <div style="clear:both;"></div>
+              </p>
+            </div>
+
+
+            <div class="thread" >
+              <div class="img-thread">
+                <img src="http://i1-news.softpedia-static.com/images/news2/comic-con-2015-first-video-from-sherlock-christmas-special-screens-486563-2.jpg">
+              </div>
+              <div class="title-thread ">
+                <p>This template has a responsive menu toggling system. The menu will appear collapsed on smaller screens, and will appear non-collapsed on larger screens. When toggle</p>
+              </div>
+              <div class="misc-thread">
+                    <span class="author-thread">by<a href="#">Alin</a></span>
+                    <span class="date-thread"><a href="#"><abbr class="timeago" title="2015-07-14T09:24:17Z">July 17, 2008</abbr></a></span>
+                    <span class="tags-thread"> <a href="">ana</a> <a href="">mere</a> <a href="">nu</a></span>
+                    <span class="upVote-thread"><span class="glyphicon glyphicon-thumbs-up custom-thumbs-up"></span>662</span>
+                    <span class="downVote-thread"><span class="glyphicon glyphicon-thumbs-down custom-thumbs-down"></span>400</span>
+                    <span class="ratting-thread"> <span class="glyphicon glyphicon-star-empty custom-star"></span>62</span>
+                    <span class="nrComments-thread"><span class="glyphicon glyphicon-comment custom-comment"></span>56</span>
+                    <span class="section-thread custom-section">SPORT</span>
+              </div>
+              <p class="lead description-thread">This template has a responsive menu toggling system. The menu will appear collapsed on smaller screens, and will appear non-collapsed on larger screens. When toggled using the button below, the menu will appear/disappear. On small screens, the page content will be pushed off canvas.
+                <button class="btn btn-default readMore-thread">Read more & Discuss</button>
+                <div style="clear:both;"></div>
+              </p>
+            </div>
+            <h2>lg</h2>
+            <button type="button" class="btn btn-default btn-circle"><i class="glyphicon glyphicon-ok"></i></button>
+            <button type="button" class="btn btn-primary btn-circle"><i class="glyphicon glyphicon-list"></i></button>
+            <button type="button" class="btn btn-success btn-circle"><i class="glyphicon glyphicon-link"></i></button>
+            <button type="button" class="btn btn-info btn-circle"><i class="glyphicon glyphicon-ok"></i></button>
+            <button type="button" class="btn btn-warning btn-circle"><i class="glyphicon glyphicon-remove"></i></button>
+            <button type="button" class="btn btn-danger btn-circle"><i class="glyphicon glyphicon-heart"></i></button>
+
+
+
+            <h2>lg</h2>
+            <button type="button" class="btn btn-default btn-circle btn-lg"><i class="glyphicon glyphicon-ok"></i></button>
+            <button type="button" class="btn btn-primary btn-circle btn-lg"><i class="glyphicon glyphicon-list"></i></button>
+            <button type="button" class="btn btn-success btn-circle btn-lg"><i class="glyphicon glyphicon-link"></i></button>
+            <button type="button" class="btn btn-info btn-circle btn-lg"><i class="glyphicon glyphicon-ok"></i></button>
+            <button type="button" class="btn btn-warning btn-circle btn-lg"><i class="glyphicon glyphicon-remove"></i></button>
+            <button type="button" class="btn btn-danger btn-circle btn-lg"><i class="glyphicon glyphicon-heart"></i></button>
+
+            <h2>xl</h2>
+            <button type="button" class="btn btn-default btn-circle btn-xl"><i class="glyphicon glyphicon-ok"></i></button>
+            <button type="button" class="btn btn-primary btn-circle btn-xl"><i class="glyphicon glyphicon-list"></i></button>
+            <button type="button" class="btn btn-success btn-circle btn-xl"><i class="glyphicon glyphicon-link"></i></button>
+            <button type="button" class="btn btn-info btn-circle btn-xl"><i class="glyphicon glyphicon-ok"></i></button>
+            <button type="button" class="btn btn-warning btn-circle btn-xl"><i class="glyphicon glyphicon-remove"></i></button>
+            <button type="button" class="btn btn-danger btn-circle btn-xl"><i class="glyphicon glyphicon-heart"></i></button>
+
+            <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus</p>
+            <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus</p>
+            <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus</p>
+            <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus</p>
+            <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus</p>
+            <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus</p>
+            <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus</p>
+            <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus</p>
+          </div>
+        </div>
+      </div>
+      <!-- /#page-content-wrapper -->
+
+    </div>
+    <!-- /#wrapper -->
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/timeago.js"></script>
+    <script src="js/login.js"></script>
+    <!-- Load timeago -->
+    <script>
+    jQuery(document).ready(function() {
+      jQuery("abbr.timeago").timeago();
+    });
+    </script>
+    <!--Timeago-->
+    
+    <!-- Menu Toggle Script -->
+    <script>
+    $("#menu-toggle").click(function(e) {
+      e.preventDefault();
+      $("#wrapper").toggleClass("toggled");
+    });
+    </script>
+
+    <script src="js/taggle.js"></script>
+    <script src="js/taggle-ie8.js"></script>
+    <script src="js/taggle-ie9.js"></script>
+
+    <script src="js/script.js"></script>
+    <script src="js/scripts.js"></script>
+    <script src="js/rainbow-custom.min.js"></script>
+
+  </body>
+
+  </html>

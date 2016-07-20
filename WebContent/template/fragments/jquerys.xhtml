@@ -1,0 +1,41 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+
+<ui:composition>
+      <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/timeago.js"></script>
+    <script src="js/login.js"></script>
+    <!-- Load timeago -->
+    <script>
+    jQuery(document).ready(function() {
+      jQuery("abbr.timeago").timeago();
+    });
+    </script>
+    <!--Timeago-->
+    
+    <!-- Menu Toggle Script -->
+    <script>
+    $("#menu-toggle").click(function(e) {
+      e.preventDefault();
+      $("#wrapper").toggleClass("toggled");
+    });
+    </script>
+
+    <script src="js/taggle.js"></script>
+    <script src="js/taggle-ie8.js"></script>
+    <script src="js/taggle-ie9.js"></script>
+
+    <script src="js/script.js"></script>
+    <script src="js/scripts.js"></script>
+    <script src="js/rainbow-custom.min.js"></script>	
+
+</ui:composition>
+
+</html>
