@@ -8,6 +8,21 @@
 	<ui:insert name="head">
 		<ui:include src="/template/fragments/head.xhtml" />
 	</ui:insert>
+	<script src="../js/tinymce.min.js"></script>
+	<script>
+		tinymce.init({
+			  selector: '#newThreadBody',
+			  height: 250,
+			  plugins: '',
+			  toolbar: '',
+			  imagetools_cors_hosts: ['tinymce.com', 'codepen.io'],
+			  content_css: [
+			    '//fonts.googleapis.com/css?family=Lato:300,300i,400,400i',
+			    '//cdnjs.cloudflare.com/ajax/libs/prism/0.0.1/prism.css',
+			    '//www.tinymce.com/css/codepen.min.css'    
+			  ]
+			});
+	</script>
 </h:head>
 
 <h:body>
