@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+
+<ui:composition>
+
+	<div id="wrapper">
+
+		<!-- /#sidebar-wrapper -->
+		<div id="sidebar-wrapper">
+			<ui:insert name="sidebar">
+				<ui:include src="/template/fragments/sidebar.xhtml" />
+			</ui:insert>
+		</div>
+
+		<a class="btn btn-primary btn-circle btn-lg fixed align-button-left"><span
+			class="glyphicon glyphicon-plus" style="top: 4px"></span> </a>
+		<!-- Page Content -->
+		<div id="page-content-wrapper">
+			<div class="culoareFundal">
+				<div class="container-fluid">
+
+					<nav class="navbar navbar-inverse">
+						<div class="navbar-header">
+							<a class="navbar-brand">New Thread</a>
+						</div>
+					</nav>
+
+					<form class="form-horizontal">
+						<fieldset>
+							<div class="section-title">
+								<div class="form-group">
+									<input class="form-control input-lg" type="text"
+										id="inputLarge" placeholder="Title" />
+								</div>
+							</div>
+							<div class="form-group">
+								<input class="form-control input-sm" type="text" id="inputSmall" />
+							</div>
+						</fieldset>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</ui:composition>
+</html>

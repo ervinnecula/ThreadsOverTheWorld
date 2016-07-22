@@ -9,21 +9,14 @@
 	
 			<div id="wrapper">
 		      
-		      <div class="post-options">
-		        <ul class="list-group">
-		          <a href="#" class="list-group-item">
-		            <span class="glyphicon glyphicon-file"></span> Documents <span class="badge">145</span>
-		          </a>
-		          <a href="#" class="list-group-item">
-		            <span class="glyphicon glyphicon-music"></span> Music <span class="badge">50</span>
-		          </a>
-		          <a href="#" class="list-group-item">
-		            <span class="glyphicon glyphicon-film"></span> Videos <span class="badge">8</span>
-		          </a>
-		        </ul>
-		      </div>
-
 		      <!-- /#sidebar-wrapper -->
+		     <div id="sidebar-wrapper">
+			     <ui:insert name="sidebar">
+					<ui:include src="/template/fragments/sidebar.xhtml" />
+				</ui:insert>
+			 </div>
+		      
+		      
 		      <a class="btn btn-primary btn-circle btn-lg fixed align-button-left"><span class="glyphicon glyphicon-plus" style="  top: 4px"></span> </a>
 		      <!-- Page Content -->
 		      <div id="page-content-wrapper">
