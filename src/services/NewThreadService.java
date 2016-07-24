@@ -1,5 +1,7 @@
 package services;
 
+import java.io.Serializable;
+
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 import javax.inject.Inject;
@@ -11,7 +13,7 @@ import utils.LoggerProducer;
 
 @ManagedBean
 @SessionScoped
-public class NewThreadService{
+public class NewThreadService implements Serializable{
 	
 	private static final long serialVersionUID = -646333935481697492L;
 
@@ -21,7 +23,7 @@ public class NewThreadService{
 	public void saveNewThread(String title, String body){
 		ThreadModel tm = new ThreadModel(title,body, null, "", "", "");
 		
-	 	logger.info(tm.toString());
+	 	logger.info(tm.getBody() +" " + tm.getTitle());
 	}
 
 }

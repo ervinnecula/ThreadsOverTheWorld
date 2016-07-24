@@ -11,9 +11,9 @@ import services.NewThreadService;
 @ManagedBean
 @SessionScoped
 public class NewThreadBean implements Serializable {
-//	
-//	@ManagedProperty("#{newThreadService}")
-//	private NewThreadService newThreadService;
+	
+	@ManagedProperty("#{newThreadService}")
+	private NewThreadService newThreadService;
 		
 	private String title;
 	private String body;
@@ -34,11 +34,15 @@ public class NewThreadBean implements Serializable {
 		this.body = body;
 	}
 
-//	public void setNewThreadService(NewThreadService newThreadService){
-//		this.newThreadService = newThreadService;
-//	}
+	public void setNewThreadService(NewThreadService newThreadService){
+		this.newThreadService = newThreadService;
+	}
+	
+	public NewThreadService getNewThreadService(){
+		return this.newThreadService;
+	}
 	
 	public void saveNewThread(){
-		System.out.println("hi");
+		newThreadService.saveNewThread(title, body);
 	}
 }

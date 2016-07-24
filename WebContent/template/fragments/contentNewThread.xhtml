@@ -36,8 +36,8 @@
 								<h:inputText value="#{newThreadBean.title}" class="form-control input-lg" type="text" id="newThreadTitle" style="font-size: 25pt;"></h:inputText>
 								
 							</div>
-								<h:inputTextarea class="newThreadBody" alue="#{newThreadBean.body}" placeholder="Tell us your story..."></h:inputTextarea>
-								<h:commandButton value="Submit" class="btn btn-default" action="#{newThreadBean.saveNewThread}"></h:commandButton>
+								<h:inputTextarea class="newThreadBody" value="#{newThreadBean.body}" placeholder="Tell us your story..."></h:inputTextarea>
+								<h:commandButton type="submit" value="Submit" class="btn btn-default btn-success btn-submit-custom" action="#{newThreadBean.saveNewThread}"></h:commandButton>
 						</div>
 					</fieldset>
 				</h:form>
