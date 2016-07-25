@@ -8,7 +8,7 @@ import javax.faces.bean.SessionScoped;
 
 import services.NewThreadService;
 
-@ManagedBean
+@ManagedBean(name="newThreadBean")
 @SessionScoped
 public class NewThreadBean implements Serializable {
 	

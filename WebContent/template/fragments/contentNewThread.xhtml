@@ -29,7 +29,7 @@
 					</div>
 				</nav>
 
-				<h:form class="form-horizontal">
+				<h:form id="newThreadForm" class="form-horizontal">
 					<fieldset>
 						<div class="container-fluid">
 							<div class="form-group">
@@ -37,7 +37,9 @@
 								
 							</div>
 								<h:inputTextarea class="newThreadBody" value="#{newThreadBean.body}" placeholder="Tell us your story..."></h:inputTextarea>
-								<h:commandButton type="submit" value="Submit" class="btn btn-default btn-success btn-submit-custom" action="#{newThreadBean.saveNewThread}"></h:commandButton>
+								<div class="input textarea clearfix textarea-own tags" id="tags" onkeydown="checkLength()" onkeyup="checkLength()" onclick="checkLength()"></div>   
+								<h:inputHidden id="tagsInput"></h:inputHidden>
+								<h:commandButton value="Submit" class="btn btn-success btn-submit-custom" action="#{newThreadBean.saveNewThread}"></h:commandButton>
 						</div>
 					</fieldset>
 				</h:form>

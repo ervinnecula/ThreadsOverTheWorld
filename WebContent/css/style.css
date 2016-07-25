@@ -334,12 +334,17 @@
     max-width: 20ch !important;
 }
 .textarea-own{
-    padding: 3px !important;
+    margin-top: 10px !important;
     padding-left: 8px !important;
 }
 .taggle_list li:not(.taggle){
    /* width: 300px;*/
 }
+
+#tags{
+	margin-top: 5px !important;	
+}
+
 .custom-thumbs-up {
       margin-left: 2%;
       margin-right: 1%;

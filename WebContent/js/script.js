@@ -216,21 +216,38 @@ function checkLength(){
    
   var taggle_sizer = document.getElementsByClassName("taggle_sizer")[0];
     
-  var textArea = document.getElementById("page-content-wrapper").children[0];
+  var textArea = document.getElementsByClassName("tags")[0];
     
   var taggle_input = document.getElementsByClassName("taggle_input")[0];
     
-    taggle_input.setAttribute("maxlength","15");
+    taggle_input.setAttribute("maxlength","19");
     
     var isActive = textArea.classList.contains("active");
     
-  if(taggle_sizer.textContent.length > 15 && isActive == true)
+  if(taggle_sizer.textContent.length > 19 && isActive == true)
      {
-       var str = taggle_sizer.textContent.substring(0,15); document.getElementsByClassName("taggle_sizer")[0].innerHTML = str;
+       var str = taggle_sizer.textContent.substring(0,19); document.getElementsByClassName("taggle_sizer")[0].innerHTML = str;
 taggle_input.innerHTML = str;
 
          
     }
+  copyToInputHidden();
+  
+}
+
+function copyToInputHidden(){
+	var tags = document.getElementsByClassName("taggle_text");
+	var inputTags = document.getElementById("newThreadForm\\:inputTags");
+	
+	inputTags.innerHTML = "";
+	
+	for(var i=0;i<tags.length; i++) {
+		var textTag = tags[i].innerHTML;
+		
+		inputTags.innerHTML = textTag + " ";
+		
+	}
+	
 }
 
 
