@@ -4,7 +4,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:h="http://java.sun.com/jsf/html"
-	xmlns:p="http://xmlns.jcp.org/jsf/passthrough">
+	xmlns:p="http://xmlns.jcp.org/jsf/passthrough"
+	xmlns:f="http://java.sun.com/jsf/core">
 
 <ui:composition>
 
@@ -37,8 +38,15 @@
 								
 							</div>
 								<h:inputTextarea class="newThreadBody" value="#{newThreadBean.body}" placeholder="Tell us your story..."></h:inputTextarea>
+								
+								<h:selectOneMenu value="#{newThreadBody.category}" binding="#{sample}">
+								   <f:selectItem itemValue="1" itemLabel="Sport" />
+								   <f:selectItem itemValue="2" itemLabel="Science" />
+								   <f:selectItem itemValue="2" itemLabel="Science" />	   							
+								</h:selectOneMenu>
+								
 								<div class="input textarea clearfix textarea-own tags" id="tags" onkeydown="checkLength()" onkeyup="checkLength()" onclick="checkLength()"></div>   
-								<h:inputHidden id="tagsInput"></h:inputHidden>
+								<h:inputHidden id="tagsInput" binding="#{newThreadBean.tags}"></h:inputHidden>
 								<h:commandButton value="Submit" class="btn btn-success btn-submit-custom" action="#{newThreadBean.saveNewThread}"></h:commandButton>
 						</div>
 					</fieldset>

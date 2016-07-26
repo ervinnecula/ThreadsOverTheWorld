@@ -5,6 +5,7 @@ import java.io.Serializable;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.SessionScoped;
+import javax.faces.component.UIInput;
 
 import services.NewThreadService;
 
@@ -17,7 +18,8 @@ public class NewThreadBean implements Serializable {
 		
 	private String title;
 	private String body;
-		
+	private UIInput tags;
+	
 	public String getTitle() {
 		return title;
 	}
@@ -33,6 +35,14 @@ public class NewThreadBean implements Serializable {
 	public void setBody(String body) {
 		this.body = body;
 	}
+	
+	public UIInput getTags(){
+		return tags;
+	}
+	
+	public void setTags(UIInput tags){
+		this.tags = tags;
+	}
 
 	public void setNewThreadService(NewThreadService newThreadService){
 		this.newThreadService = newThreadService;
@@ -41,8 +51,8 @@ public class NewThreadBean implements Serializable {
 	public NewThreadService getNewThreadService(){
 		return this.newThreadService;
 	}
-	
+		
 	public void saveNewThread(){
-		newThreadService.saveNewThread(title, body);
+		newThreadService.saveNewThread(title, body, tags);
 	}
 }

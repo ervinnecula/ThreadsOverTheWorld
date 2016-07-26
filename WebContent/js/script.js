@@ -120,7 +120,7 @@ UI = {
     }  
     
     if($(window).width()>600){
-      console.log("Show");
+//      console.log("Show");
       UI.expandLogo();
       
       // UI.isLower = true;
@@ -232,22 +232,25 @@ taggle_input.innerHTML = str;
          
     }
   copyToInputHidden();
-  
 }
 
 function copyToInputHidden(){
 	var tags = document.getElementsByClassName("taggle_text");
-	var inputTags = document.getElementById("newThreadForm\\:inputTags");
+	var inputTags = $(".tagsInput");
 	
-	inputTags.innerHTML = "";
+	if(tags.length != 0){
+	var first = tags[0].innerHTML;
+	var tagsToCopy = first;
 	
-	for(var i=0;i<tags.length; i++) {
+	for(var i=1;i<tags.length; i++) {
 		var textTag = tags[i].innerHTML;
 		
-		inputTags.innerHTML = textTag + " ";
+		tagsToCopy = tagsToCopy + "|" + textTag;
 		
 	}
 	
+		document.getElementById("newThreadForm:tagsInput").value = tagsToCopy;
+	}
 }
 
 
