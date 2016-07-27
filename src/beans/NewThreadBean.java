@@ -1,6 +1,8 @@
 package beans;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
@@ -19,6 +21,9 @@ public class NewThreadBean implements Serializable {
 	private String title;
 	private String body;
 	private UIInput tags;
+	private List<String> selectOptions;
+	private String category;
+	private String redirectToNewThread;
 	
 	public String getTitle() {
 		return title;
@@ -52,7 +57,28 @@ public class NewThreadBean implements Serializable {
 		return this.newThreadService;
 	}
 		
+	public String getCategory() {
+		return category;
+	}
+
+	public void setCategory(String category) {
+		this.category = category;
+	}
+
+	public List<String> getSelectOptions() {
+		selectOptions = new ArrayList<String>();
+		selectOptions.add("Sport");
+		selectOptions.add("Science");
+		selectOptions.add("Fun");
+		
+		return selectOptions;
+	}
+
 	public void saveNewThread(){
-		newThreadService.saveNewThread(title, body, tags);
+		newThreadService.saveNewThread(title, body, tags, category);
+	}
+	
+	public String getRedirectToNewThread(){
+		return "newThread.xhtml?faces-redirect=true";
 	}
 }

@@ -24,13 +24,15 @@ public class NewThreadService implements Serializable{
 	@Inject
 	private static final Logger logger = Logger.getLogger(LoggerProducer.class);
 	
-	public void saveNewThread(String title, String body, UIInput tags){
+	public void saveNewThread(String title, String body, UIInput tags, String category){
 		
 		String timeStamp = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date());
 		
-		ThreadModel tm = new ThreadModel(title,body, getTagsAsArrayList(tags), timeStamp, "", "");
+		ArrayList<String> tagList = getTagsAsArrayList(tags);
 		
-	 	logger.info(tm.getBody() + " " + tm.getTitle() + " " + tags + " " + timeStamp);
+		ThreadModel tm = new ThreadModel(title,body, tagList, timeStamp, "", category);
+		
+	 	logger.info(tm.toString());
 	}
 	
 	public ArrayList<String> getTagsAsArrayList(UIInput tags){

@@ -336,6 +336,9 @@
 .textarea-own{
     margin-top: 10px !important;
     padding-left: 8px !important;
+    min-height: 65px !important;
+    height: 16px !important;
+    margin-bottom: 0px !important;
 }
 .taggle_list li:not(.taggle){
    /* width: 300px;*/
@@ -478,4 +481,10 @@
 
 .btn-submit-custom{
 	margin-top: 15px;
+	margin-bottom: 10px;
+}
+
+.custom-select{
+	height: 50px !important;
+	margin-top: 5px;
 }

@@ -75,4 +75,20 @@ public class ThreadModel {
 	public void setCategory(String category) {
 		this.category = category;
 	}	
+	
+	@Override
+	public String toString(){
+		StringBuilder tagStringBuilder = new StringBuilder();
+		for(String tag:tags){
+			tagStringBuilder.append(tag);
+			tagStringBuilder.append(" ");
+		}
+		
+		return "Author:" + this.author +
+				"\ntitle:" + this.title +
+				"\nbody:" + this.body + 
+				"\ntimestamp:" + this.timestamp +
+				"\ntags:" + tagStringBuilder.toString() +
+				"\ncategory: " + this.category;
+	}
 }

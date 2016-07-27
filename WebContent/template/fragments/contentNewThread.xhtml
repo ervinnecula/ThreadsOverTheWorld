@@ -37,15 +37,14 @@
 								<h:inputText value="#{newThreadBean.title}" class="form-control input-lg" type="text" id="newThreadTitle" style="font-size: 25pt;"></h:inputText>
 								
 							</div>
-								<h:inputTextarea class="newThreadBody" value="#{newThreadBean.body}" placeholder="Tell us your story..."></h:inputTextarea>
+								<h:inputTextarea class="newThreadBody" value="#{newThreadBean.body}" p:placeholder="Tell us your story..."></h:inputTextarea>
 								
-								<h:selectOneMenu value="#{newThreadBody.category}" binding="#{sample}">
-								   <f:selectItem itemValue="1" itemLabel="Sport" />
-								   <f:selectItem itemValue="2" itemLabel="Science" />
-								   <f:selectItem itemValue="2" itemLabel="Science" />	   							
+								<h:selectOneMenu value="#{newThreadBean.category}" styleClass="form-control custom-select">
+								   <f:selectItem itemLabel="Chose category" />
+								   <f:selectItems value="#{newThreadBean.selectOptions}" />   							
 								</h:selectOneMenu>
 								
-								<div class="input textarea clearfix textarea-own tags" id="tags" onkeydown="checkLength()" onkeyup="checkLength()" onclick="checkLength()"></div>   
+								<div class="input textarea clearfix tags textarea-own" id="tags" onkeydown="checkLength()" onkeyup="checkLength()" onclick="checkLength()"></div>   
 								<h:inputHidden id="tagsInput" binding="#{newThreadBean.tags}"></h:inputHidden>
 								<h:commandButton value="Submit" class="btn btn-success btn-submit-custom" action="#{newThreadBean.saveNewThread}"></h:commandButton>
 						</div>
