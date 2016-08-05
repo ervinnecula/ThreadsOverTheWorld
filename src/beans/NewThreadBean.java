@@ -11,16 +11,18 @@ import javax.faces.component.UIInput;
 
 import services.NewThreadService;
 
-@ManagedBean(name="newThreadBean")
+@ManagedBean
 @SessionScoped
 public class NewThreadBean implements Serializable {
-	
+
+	private static final long serialVersionUID = 7091555025241476022L;
+
 	@ManagedProperty("#{newThreadService}")
 	private NewThreadService newThreadService;
 		
 	private String title;
 	private String body;
-	private UIInput tags;
+	private transient UIInput tags;
 	private List<String> selectOptions;
 	private String category;
 	private String redirectToNewThread;

@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:h="http://java.sun.com/jsf/html"
-	xmlns:p="http://xmlns.jcp.org/jsf/passthrough"
+	xmlns:p="http://primefaces.org/ui"
 	xmlns:f="http://java.sun.com/jsf/core">
 
 <ui:composition>
@@ -18,8 +18,7 @@
 			</ui:insert>
 		</div>
 
-		<a class="btn btn-primary btn-circle btn-lg fixed align-button-left"><span
-			class="glyphicon glyphicon-plus" style="top: 4px"></span> </a>
+		
 		<!-- Page Content -->
 		<div id="page-content-wrapper">
 			<div class="culoareFundal">
@@ -34,10 +33,10 @@
 					<fieldset>
 						<div class="container-fluid">
 							<div class="form-group">
-								<h:inputText value="#{newThreadBean.title}" class="form-control input-lg" type="text" id="newThreadTitle" style="font-size: 25pt;"></h:inputText>
-								
+								<h:inputText value="#{newThreadBean.title}" styleClass="form-control input-lg" type="text" id="newThreadTitle" style="font-size: 25pt;"></h:inputText>
 							</div>
-								<h:inputTextarea class="newThreadBody" value="#{newThreadBean.body}" p:placeholder="Tell us your story..."></h:inputTextarea>
+							
+								<h:inputTextarea class="newThreadBody" value="#{newThreadBean.body}" id="newThreadBody"></h:inputTextarea>
 								
 								<h:selectOneMenu value="#{newThreadBean.category}" styleClass="form-control custom-select">
 								   <f:selectItem itemLabel="Chose category" />

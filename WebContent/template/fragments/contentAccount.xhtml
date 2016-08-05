@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml"   
-      xmlns:ui="http://java.sun.com/jsf/facelets"
-      >
-	    <ui:composition>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:f="http://java.sun.com/jsf/core">
+	<ui:composition>
 	
 			<div id="wrapper">
 		      <!-- /#sidebar-wrapper -->
@@ -14,7 +16,6 @@
 				</ui:insert>
 			 </div>
 
-		      <a class="btn btn-primary btn-circle btn-lg fixed align-button-left"><span class="glyphicon glyphicon-plus" style="  top: 4px"></span> </a>
 		      <!-- Page Content -->
 		      <div id="page-content-wrapper">
 			  	<div class="culoareFundal">
@@ -24,20 +25,8 @@
 		                <nav class="navbar navbar-inverse">
 		                  <div class="container-fluid">
 		                    <div class="navbar-header own-navbar-header">          
-		                      <a class="navbar-brand own-navbar-brand" href="#">Account settings</a>
-		
+		                      <a class="navbar-brand own-navbar-brand">Account settings</a>
 		                    </div>
-		                     <div class="btn-group own-filter">
-		                      <a href="#" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-		                        Filter
-		                        <span class="caret"></span>
-		                      </a>
-		                      <ul class="dropdown-menu">
-		                        <li><a href="#">Time</a></li>
-		                        <li><a href="#">Section</a></li>
-		                        <li><a href="#">Language</a></li>
-		                       </ul>
-		                    </div>   
 		                  </div>
 		                </nav>
 		            </div>
@@ -50,78 +39,89 @@
 			              <h3 class="panel-title">Overview</h3>
 			              <div class="symbol"><span class="glyphicon glyphicon-chevron-up" id="arrow-overview-icon"></span></div>
 			           </div>
+			           
 			           <div class="panel-body" id="overview-body">
-			              <form class="form-horizontal own-form">
-			              <fieldset>
-			                <div class="form-group">
-			                  <label for="inputNickName" class="col-lg-2 control-label overview-label">NickName</label>
-			                  <div class="col-lg-10">
-			                    <input type="text" class="form-control input-overview" placeholder="NickName" maxlength="20"/>
-			                    <div class="checkbox own-checkbox">
-			                      <label>
-			                        <input type="checkbox"/> 
-			                      </label>*
-			                    </div>
-			                  </div>
-			                </div>  
-			                  
-			                <div class="form-group">
-			                  <label for="inputEmail" class="col-lg-2 control-label overview-label">Email</label>
-			                  <div class="col-lg-10">
-			                    <input type="text" class="form-control input-overview" id="inputEmail" placeholder="Email" maxlenght="40"/>
-			                     <div class="checkbox own-checkbox">
-			                       <label>
-			                         <input type="checkbox"/> 
-			                       </label>*
-			                     </div>
-			                  </div>
-			                </div>
-			                
-			                <div class="form-group">
-			                  <label for="inputAccountType" class="col-lg-2 control-label overview-label">Account type</label>
-			                  <div class="col-lg-10 container-padding">
-			                    <input type="text" class="form-control input-overview" id="accountType" placeholder="Boss de boss" readonly="readonly" />
-			                     <div class="checkbox own-checkbox">
-			                      <label>
-			                        <input type="checkbox"/> 
-			                      </label>*
-			                    </div>
-			                  </div>
-			                </div>
-			                  
-			                <div class="form-group">
-			                  <label for="inputPassword" class="col-lg-2 control-label overview-label">Change Password</label>
-			                  <div class="col-lg-10 container-padding">
-			                    <input type="password" class="form-control input-overview" id="inputPassword" placeholder="New Password"/>
-			                  </div>
-			                </div>
-			                
-			                <div class="form-group">
-			                  <label for="inputImage" class="col-lg-2 control-label overview-label">New Image</label>
-			                  <div class="col-lg-10 container-padding">
-			                    <span>
-			                       <img id="user-image" src="http://i1-news.softpedia-static.com/images/news2/comic-con-2015-first-video-from-sherlock-christmas-special-screens-486563-2.jpg"/>
-			                    </span>
-			                    <span class="btn btn-default btn-file">
-			                       BROWSE <input type="file"/>
-			                    </span>
-			                  </div>
-			                </div>
-			                
-			                <div class="form-group">
-			                   * Check to make it visible for other users
-			                 </div>
-			                
-			
-			                <div class="form-group">
-			                  <div class="col-lg-10 col-lg-offset-2">
-			                    <button type="reset" class="btn btn-default">Cancel</button>
-			                    <button type="submit" class="btn btn-primary">Submit</button>
-			                  </div>
-			                </div>
-			                 
-			              </fieldset>
-			             </form> 
+			           
+			              <h:form id="overviewForm" class="form-horizontal own-form" enctype="multipart/form-data">
+				              <fieldset>
+				                <div class="form-group">
+				                  <label class="col-lg-2 control-label overview-label">NickName</label>
+				                  <div class="col-lg-10">
+				                  
+				                    <h:inputText value="#{accountBean.nickname}" type="text" styleClass="form-control input-overview" maxlength="20"/>
+				                    
+				                    <div class="checkbox own-checkbox">
+				                      <label>
+				                        <input type="checkbox"/> 
+				                      </label>*
+				                    </div>
+				                  </div>
+				                </div>  
+				                  
+				                <div class="form-group">
+				                  <label class="col-lg-2 control-label overview-label">Email</label>
+				                  <div class="col-lg-10">
+				                  
+				                    <h:inputText value="#{accountBean.email}" type="text" styleClass="form-control input-overview" maxlength="60"/>
+				                    
+				                     <div class="checkbox own-checkbox">
+				                       <label>
+				                         <input type="checkbox"/> 
+				                       </label>*
+				                     </div>
+				                  </div>
+				                </div>
+				                
+				                <div class="form-group">
+				                  <label for="inputAccountType" class="col-lg-2 control-label overview-label">Account type</label>
+				                  <div class="col-lg-10 container-padding">
+				                  
+				                    <h:inputText value="#{accountBean.type}" type="text" styleClass="form-control input-overview" readonly="readonly" />
+				                    
+				                     <div class="checkbox own-checkbox">
+				                      <label>
+				                        <input type="checkbox"/> 
+				                      </label>*
+				                    </div>
+				                  </div>
+				                </div>
+				                  
+				                <div class="form-group">
+				                  <label for="inputPassword" class="col-lg-2 control-label overview-label">Change Password</label>
+				                  <div class="col-lg-10 container-padding">
+				                    <h:inputText value="#{accountBean.newPassword}" type="text" styleClass="form-control input-overview" maxlength="30"/>
+				                  </div>
+				                </div>
+				                
+				                <div class="form-group">
+				                  <label for="inputImage" class="col-lg-2 control-label overview-label">New Image</label>
+				                  <div class="col-lg-10 container-padding">
+				                    <span>
+				                       <img id="user-image" src="http://i1-news.softpedia-static.com/images/news2/comic-con-2015-first-video-from-sherlock-christmas-special-screens-486563-2.jpg"/>
+				                    </span>
+				                    
+				                    	<p:fileUpload fileUploadListener="#{accountBean.picture}" 
+				                    	auto="true" mode="advanced" update="messages"
+				                    	sizeLimit="1000000" allowTypes="/(\.|\/)(jpe?g|png)$/"/>
+				                    	<p:growl id="messages" showDetail="true" />
+				                    	
+				                  </div>
+				                </div>
+
+				                <div class="form-group">
+				                   * Check to make it visible for other users
+				                </div>
+				                
+				
+				                <div class="form-group">
+				                  <div class="col-lg-10 col-lg-offset-2">
+				                    <h:commandButton type="reset" class="btn btn-default" value="Cancel"></h:commandButton>
+				                    <h:commandButton type="submit" class="btn btn-primary" value="Update" action="#{accountBean.update}"></h:commandButton>
+				                  </div>
+				                </div>
+				                 
+				              </fieldset>
+			              </h:form> 
 			           </div>
 			        </div>
 	        	<!-- Panel 2 -->

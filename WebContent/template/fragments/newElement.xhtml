@@ -6,14 +6,16 @@
       xmlns:h="http://java.sun.com/jsf/html">
 
 	    <ui:composition>
-	
-			<div class="post-options">
-		        <ul class="list-group">
-		          <h:outputLink styleClass="list-group-item" value="#{newThreadBean.redirectToNewThread}">
-		            <span class="glyphicon glyphicon-file"></span> New Article
-		          </h:outputLink>
-		        </ul>
-		      </div>
-				
+			<a class="btn btn-primary btn-circle btn-lg fixed align-button-left"><span
+					class="glyphicon glyphicon-plus" style="top: 4px"></span>
+					
+				<div class="post-options">
+			        <ul class="list-group">
+			          <h:outputLink styleClass="list-group-item" value="#{newThreadBean.redirectToNewThread}">
+			            <span class="glyphicon glyphicon-file"></span> New Article
+			          </h:outputLink>
+			        </ul>
+			      </div>
+			 </a>	
 	    </ui:composition>
 </html>

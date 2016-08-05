@@ -8,12 +8,13 @@
 	<ui:insert name="head">
 		<ui:include src="/template/fragments/head.xhtml" />
 	</ui:insert>
-	<script src="../js/tinymce.min.js"></script>
+	<script src="js/tinymce.min.js"></script>
 	<script>
 		tinymce.init({
 			  selector: '.newThreadBody',
 			  height: 250,
-			  plugins: '',
+			  plugins: ['placeholder'],
+			  placeholder: 'Tell us your story...',
 			  toolbar: '',
 			  imagetools_cors_hosts: ['tinymce.com', 'codepen.io'],
 			  content_css: [
@@ -37,12 +38,6 @@
 	<div id="auth">
 		<ui:insert name="auth">
 			<ui:include src="/template/fragments/auth.xhtml" />
-		</ui:insert>
-	</div>
-
-	<div id="sidebar">
-		<ui:insert name="sidebar">
-			<ui:include src="/template/fragments/newElement.xhtml" />
 		</ui:insert>
 	</div>
 
