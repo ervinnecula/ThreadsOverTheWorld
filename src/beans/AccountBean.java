@@ -1,16 +1,15 @@
 package beans;
 
+import java.io.IOException;
 import java.io.Serializable;
 
-import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
-import javax.faces.context.FacesContext;
+import javax.servlet.http.Part;
 
-import org.primefaces.event.FileUploadEvent;
 import org.primefaces.model.UploadedFile;
 
-@ManagedBean
+@ManagedBean(name="accountBean")
 @SessionScoped
 public class AccountBean implements Serializable  {
 
@@ -20,7 +19,7 @@ public class AccountBean implements Serializable  {
 	private String email;
 	private String type;
 	private String newPassword;
-	private UploadedFile picture;
+	private Part picture;
 	
 	public String getNickname() {
 		return nickname;
@@ -46,16 +45,21 @@ public class AccountBean implements Serializable  {
 	public void setNewPassword(String newPassword) {
 		this.newPassword = newPassword;
 	}
-	public UploadedFile getPicture() {
+	public Part getPicture() {
 		return picture;
 	}
-	public void setPicture(UploadedFile picture) {
+	public void setPicture(Part picture) {
 		this.picture = picture;
 	}
 	
-	public void update(FileUploadEvent event){
-			FacesMessage message = new FacesMessage("Succesful", event.getFile().getFileName() + " is uploaded.");
-            FacesContext.getCurrentInstance().addMessage(null, message);
+	public void updateInfo() throws IOException{
+		
+		Part uploadedPhoto = getPicture();
+		System.out.println(uploadedPhoto.getInputStream());
+		System.out.println(nickname);
+		System.out.println(email);
+		
+		//TODO
 	}
 	
 }

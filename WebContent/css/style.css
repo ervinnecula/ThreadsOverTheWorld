@@ -490,12 +490,12 @@
 }
 
 .ui-fileupload-buttonbar {
-    background: transparent none;
-    border: none;
+/*     background: transparent none;
+    border: none;*/ 
 }
 
 .ui-fileupload-upload {
-	display: inline-block;
+	/* display: inline-block; 
     padding: 5px 9px;
     padding-top: 5px;
     margin-bottom: 0;
@@ -517,6 +517,7 @@
     font: 14px/20px "Helvetica Neue",Helvetica,Arial,sans-serif;
     color: #ffffff;
     border-color: transparent;
+   */
 }
 
 /* .ui-fileupload-content{
@@ -532,7 +533,7 @@
 } */
 
 .ui-fileupload-buttonbar .ui-fileupload-choose {
-    display: inline-block;
+    /* display: inline-block; 
     padding: 5px 9px;
     padding-top: 5px;
     margin-bottom: 0;
@@ -554,5 +555,5 @@
     font: 14px/20px "Helvetica Neue",Helvetica,Arial,sans-serif;
     color: #ffffff;
     background-color: #4caf50;
-    border-color: transparent;
+    border-color: transparent;*/
 }
