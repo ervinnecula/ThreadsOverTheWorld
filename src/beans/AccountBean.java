@@ -1,25 +1,30 @@
 package beans;
 
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.Serializable;
 
 import javax.faces.bean.ManagedBean;
+import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.SessionScoped;
 import javax.servlet.http.Part;
 
-import org.primefaces.model.UploadedFile;
+import services.AccountService;
 
-@ManagedBean(name="accountBean")
+@ManagedBean
 @SessionScoped
 public class AccountBean implements Serializable  {
 
 	private static final long serialVersionUID = 8718167203864397551L;
 	
+	@ManagedProperty("#{accountService}")
+	private AccountService accountService;
+	
 	private String nickname;
 	private String email;
 	private String type;
 	private String newPassword;
-	private Part picture;
+	private Part newPicture;
 	
 	public String getNickname() {
 		return nickname;
@@ -45,21 +50,25 @@ public class AccountBean implements Serializable  {
 	public void setNewPassword(String newPassword) {
 		this.newPassword = newPassword;
 	}
-	public Part getPicture() {
-		return picture;
+	public Part getNewPicture() {
+		return newPicture;
 	}
-	public void setPicture(Part picture) {
-		this.picture = picture;
+	public void setNewPicture(Part newPicture) {
+		this.newPicture = newPicture;
+	}
+	
+	public AccountService getAccountService() {
+		return accountService;
+	}
+	public void setAccountService(AccountService accountService) {
+		this.accountService = accountService;
 	}
 	
 	public void updateInfo() throws IOException{
+		Part uploadedPhoto = getNewPicture();
+		InputStream newPicture = uploadedPhoto.getInputStream();
 		
-		Part uploadedPhoto = getPicture();
-		System.out.println(uploadedPhoto.getInputStream());
-		System.out.println(nickname);
-		System.out.println(email);
-		
-		//TODO
+		accountService.updateAccountOverview(nickname,email,newPassword,newPicture);
 	}
 	
 }

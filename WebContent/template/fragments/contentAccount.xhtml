@@ -75,7 +75,7 @@
 				                  <label for="inputAccountType" class="col-lg-2 control-label overview-label">Account type</label>
 				                  <div class="col-lg-10 container-padding">
 				                  
-				                    <h:inputText value="#{accountBean.type}" type="text" styleClass="form-control input-overview" readonly="readonly" />
+				                    <h:inputText value="#{accountBean.type}" type="text" styleClass="form-control input-overview" readonly="true" />
 				                    
 				                     <div class="checkbox own-checkbox">
 				                      <label>
@@ -96,9 +96,16 @@
 				                  <label for="inputImage" class="col-lg-2 control-label overview-label">New Image</label>
 				                  <div class="col-lg-10 container-padding">
 				                    <span>
-				                       <img id="user-image" src="http://i1-news.softpedia-static.com/images/news2/comic-con-2015-first-video-from-sherlock-christmas-special-screens-486563-2.jpg"/>
+				                       <p:graphicImage value="#" id="user-image" />
 				                    </span>
-										<h:inputFile value="#{accountBean.picture}"/>				                    	
+										<label class="btn btn-default btn-file">Browse
+											<h:inputFile id="inputPicture" value="#{accountBean.newPicture}" onchange="$('#upload-file-info').html($(this).val());">
+												<f:validator validatorId="newPictureValidator"></f:validator>
+											</h:inputFile>
+										</label>
+										<span class='label label-primary' id="upload-file-info"></span>
+										<br/>
+										<h:message for="inputPicture" style="color:red"/>			                    	
 					                </div>
 					              </div>
 
@@ -108,7 +115,7 @@
 				                				
 					               <div class="form-group">
 					                  <div class="col-lg-10 col-lg-offset-2">
-					                    <h:commandButton styleClass="btn btn-primary" value="Update" action="#{accountBean.updateInfo}"/>
+					                    <h:commandButton styleClass="btn btn-primary" type="submit" value="Update" action="#{accountBean.updateInfo}"/>
 					                  </div>
 					               </div>
 			              </h:form> 
