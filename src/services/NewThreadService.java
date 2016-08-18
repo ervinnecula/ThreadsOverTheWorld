@@ -11,8 +11,12 @@ import javax.faces.component.UIInput;
 import javax.inject.Inject;
 
 import org.apache.log4j.Logger;
+import org.hibernate.HibernateException;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
 
 import entities.ThreadModel;
+import utils.HibernateUtil;
 import utils.LoggerProducer;
 
 @ManagedBean
@@ -20,6 +24,8 @@ import utils.LoggerProducer;
 public class NewThreadService implements Serializable{
 	
 	private static final long serialVersionUID = -646333935481697492L;
+	
+	private static SessionFactory sessionFactory;
 
 	@Inject
 	private static final Logger logger = Logger.getLogger(LoggerProducer.class);
@@ -30,7 +36,20 @@ public class NewThreadService implements Serializable{
 		
 		ArrayList<String> tagList = getTagsAsArrayList(tags);
 		
+		sessionFactory = HibernateUtil.getSessionFactory();
+		Session session = sessionFactory.getCurrentSession();
+
 		ThreadModel tm = new ThreadModel(title,body, tagList, timeStamp, "", category);
+		
+		try{
+			session.beginTransaction();
+			session.save(tm);
+			session.getTransaction().commit();
+		}
+		catch(HibernateException e){
+			e.printStackTrace();
+			session.getTransaction().rollback();
+		}
 		
 	 	logger.info(tm.toString());
 	}

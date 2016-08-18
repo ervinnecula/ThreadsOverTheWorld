@@ -96,7 +96,7 @@
 				                  <label for="inputImage" class="col-lg-2 control-label overview-label">New Image</label>
 				                  <div class="col-lg-10 container-padding">
 				                    <span>
-				                       <p:graphicImage value="#" id="user-image" />
+				                       <p:graphicImage value="#{accountBean.picture}" id="user-image" height="150px" width="150px"/>
 				                    </span>
 										<label class="btn btn-default btn-file">Browse
 											<h:inputFile id="inputPicture" value="#{accountBean.newPicture}" onchange="$('#upload-file-info').html($(this).val());">
@@ -121,77 +121,7 @@
 			              </h:form> 
 			           </div>
 			        </div>
-	        	<!-- Panel 2 -->
-			        <div class="panel panel-success">
-			           <div class="panel-heading panel-own" id="connected-accounts">
-			              <h3 class="panel-title">Connected accounts</h3>
-			              <div class="symbol"><span class="glyphicon glyphicon-chevron-down" id="arrow-connected-icon"></span></div>
-			           </div>
-			           <div class="panel-body" id="connected-accounts-body">
-			               <nav>
-			                <ul>
-			                  <li><a class="social google" href="#">
-			                          <div class="icon-left"><i class="fa fa-google-plus own-fa"></i></div>
-			                          <div class="name-right">Google+</div> 
-			                          <div class="status connected">
-			                              <span class="label label-success own-label">Connected</span>
-			                          </div>
-			                      </a>
-			                 </li>
-			                  <li><a class="social tumblr" href="#">
-			                          <div class="icon-left">
-			                              <i class="fa fa-tumblr own-fa"></i>
-			                          </div><div class="name-right">Tumblr</div>
-			                          <div class="status connected">
-			                                  <span class="label label-danger own-label">Disconnected</span>
-			                          </div>
-			                      </a>
-			                  </li>
-			                  <li>
-			                      <a class="social facebook" href="#">
-			                          <div class="icon-left">
-			                              <i class="fa fa-facebook own-fa"></i>
-			                          </div><div class="name-right">Facebook</div>
-			                          <div class="status connected">
-			                              <span class="label label-success own-label">Connected</span>
-			                          </div>
-			                      </a>
-			                 </li>
-			                  <li>
-			                      <a class="social twitter" href="#">
-			                          <div class="icon-left">
-			                              <i class="fa fa-twitter own-fa"></i>
-			                          </div><div class="name-right">Twitter</div>
-			                          <div class="status connected">
-			                                  <span class="label label-danger own-label">Disconnected</span>
-			                          </div>
-			                      </a>
-			                  </li>
-			                  <li>
-			                      <a class="social instagram" href="#">
-			                          <div class="icon-left">
-			                              <i class="fa fa-instagram own-fa"></i>
-			                          </div>
-			                          <div class="name-right">Instagram</div>
-			                          <div class="status connected">
-			                                  <span class="label label-danger own-label">Disconnected</span>
-			                          </div>
-			                      </a>
-			                    </li>
-			                  <li>
-			                      <a class="social linkedin" href="#">
-			                          <div class="icon-left">
-			                              <i class="fa fa-linkedin own-fa"></i>
-			                          </div><div class="name-right">LinkedIn</div>
-			                          <div class="status connected">
-			                              <span class="label label-success own-label">Connected</span>
-			                          </div>
-			                      </a>
-			                  </li>
-			                </ul>
-			              </nav>
-			           </div>
-			        </div>
+
 	        		<!-- Panel 3 -->
 			        <div class="panel panel-success">
 
