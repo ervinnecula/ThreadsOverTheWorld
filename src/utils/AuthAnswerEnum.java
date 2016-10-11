@@ -1,0 +1,14 @@
+package utils;
+
+public enum AuthAnswerEnum {
+	L_MATCH,
+	L_WRONG_PASS,
+	L_WRONG_NICKNAME, 
+	L_QUERY_ERROR,
+	
+	R_GOOD,
+	R_NICK_TAKEN,
+	R_PASS_SHORT, 
+	R_PASS_NO_ALPHANUMERIC,
+	R_QUERY_ERROR,
+}

@@ -3,8 +3,10 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"   
       xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui"  
       >
-
 	    <ui:composition>
 	
 		  		<div class="modal fade" id="myModal" role="dialog">
@@ -27,12 +29,14 @@
 									<div class="panel-body" style="padding-bottom: 20px">
 										<div class="row">
 											<div class="col-lg-12">
-												<form id="login-form" action="" method="post" role="form" style="display: block;">
+											
+												<!-- LOGIN -->
+												<h:form id="loginForm">
 													<div class="form-group">
-														<input type="text" name="username" id="username" tabindex="1" class="form-control" placeholder="Username" value=""/>
+														<h:inputText value="#{accountBean.nickname}" type="text" id="nickname" class="form-control"/>														
 													</div>
 													<div class="form-group">
-														<input type="password" name="password" id="password" tabindex="2" class="form-control" placeholder="Password"/>
+														<h:inputSecret value="#{accountBean.password}" type="text" id="password" class="form-control"/>
 													</div>
 													<div class="form-group text-center">
 														<input type="checkbox" tabindex="3" class="" name="remember" id="remember"/>
@@ -41,10 +45,15 @@
 													<div class="form-group">
 														<div class="row">
 															<div class="col-sm-6 col-sm-offset-3">
-																<input type="submit" name="login-submit" id="login-submit" tabindex="4" class="form-control btn btn-login" value="Log In"/>
+																<p:commandButton value="Login" class="btn btn-success btn-submit-custom" actionListener="#{accountBean.login}">
+																	<f:ajax render="auth-message" execute="nickname"/>
+																</p:commandButton>
 															</div>
 														</div>
 													</div>
+													
+													<p:messages id="messages" showDetail="true" autoUpdate="true" closable="true" />
+													
 													<div class="form-group">
 														<div class="row">
 															<div class="col-lg-12">
@@ -54,64 +63,68 @@
 															</div>
 														</div>
 													</div>
+													
 				                                    
-				                                    
-				                                    
-				                                    
-				                                    <div class="row omb_row-sm-offset-3 omb_socialButtons">
-				                                    <div class="col-xs-4 col-sm-2">
-				                                        <a href="#" class="btn btn-lg btn-block omb_btn-facebook">
-				                                            <i class="fa fa-facebook visible-xs"></i>
-				                                            <span id="facebook-text">Facebook</span>
-				                                        </a>
-				                                    </div>
-				                                    <div class="col-xs-4 col-sm-2">
-				                                        <a href="#" class="btn btn-lg btn-block omb_btn-twitter">
-				                                            <i class="fa fa-twitter visible-xs"></i>
-				                                            <span id="twitter-text" >Twitter</span>
-				                                        </a>
-				                                    </div>	
-				                                    <div class="col-xs-4 col-sm-2">
-				                                        <a href="#" class="btn btn-lg btn-block omb_btn-google">
-				                                            <i class="fa fa-google-plus visible-xs"></i>
-				                                            <span id="google-text" >Google+</span>
-				                                        </a>
-				                                    </div>	
-				                                     
-				                                </div>
-				
-				                                
-												</form>
-												<form id="register-form" action="" method="post" role="form" style="display: none;">
+				                                                                       
+			                                     <!-- SOCIAL BUTTONS -->
+ 				                                  <div class="row omb_row-sm-offset-3 omb_socialButtons">
+						                                    <div class="col-xs-4 col-sm-2">
+						                                        <a href="#" class="btn btn-lg btn-block omb_btn-facebook">
+						                                            <i class="fa fa-facebook visible-xs"></i>
+						                                            <span id="facebook-text">Facebook</span>
+						                                        </a>
+						                                    </div>
+						                                    <div class="col-xs-4 col-sm-2">
+						                                        <a href="#" class="btn btn-lg btn-block omb_btn-twitter">
+						                                            <i class="fa fa-twitter visible-xs"></i>
+						                                            <span id="twitter-text" >Twitter</span>
+						                                        </a>
+						                                    </div>	
+						                                    <div class="col-xs-4 col-sm-2">
+						                                        <a href="#" class="btn btn-lg btn-block omb_btn-google">
+						                                            <i class="fa fa-google-plus visible-xs"></i>
+						                                            <span id="google-text" >Google+</span>
+						                                        </a>
+						                                    </div>	
+						                                     
+						                              </div>            
+												</h:form>
+											
+												<!-- REGISTER -->
+												<h:form id="registerForm" style="display: none;">
 													<div class="form-group">
-														<input type="text" name="username" id="username" tabindex="1" class="form-control" placeholder="Username" value=""/>
+														<h:inputText value="#{accountBean.nickname}" type="text" id="nickname" class="form-control"/>														
 													</div>
 													<div class="form-group">
-														<input type="email" name="email" id="email" tabindex="1" class="form-control" placeholder="Email Address" value=""/>
+														<h:inputText value="#{accountBean.email}" type="text" id="email" class="form-control"/>
 													</div>
 													<div class="form-group">
-														<input type="password" name="password" id="password" tabindex="2" class="form-control" placeholder="Password"/>
+														<h:inputSecret value="#{accountBean.password}" type="text" id="password" class="form-control"/>
 													</div>
 				                                    
 				                                   
 												
 													<div class="form-group">
 														<div class="row">
-															<div class="col-sm-6 col-sm-offset-3">
-																<input type="submit" name="register-submit" id="register-submit" tabindex="4" class="form-control btn btn-register" value="Register Now"/>
+															<div class="col-sm-6 col-sm-offset-3">																
+																<p:commandButton value="Register Now" class="form-control btn btn-register" actionListener="#{accountBean.register}">
+																	<f:ajax render="auth-message" execute="nickname"/>
+																</p:commandButton>
 															</div>
 														</div>
 													</div>
-												</form>
+													
+													<p:messages id="messages" showDetail="true" autoUpdate="true" closable="true" />
+												</h:form>
+												
 											</div>
 										</div>
 									</div>
 								</div>
-						</div>
+							</div>
 				        </div>
 				      </div>
 				    </div>
 				  </div>
-				
 	    </ui:composition>
 </html>

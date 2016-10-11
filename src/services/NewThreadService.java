@@ -25,21 +25,18 @@ public class NewThreadService implements Serializable{
 	
 	private static final long serialVersionUID = -646333935481697492L;
 	
-	private static SessionFactory sessionFactory;
-
+	private static Session session;
 	@Inject
 	private static final Logger logger = Logger.getLogger(LoggerProducer.class);
 	
 	public void saveNewThread(String title, String body, UIInput tags, String category){
 		
 		String timeStamp = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date());
-		
 		ArrayList<String> tagList = getTagsAsArrayList(tags);
-		
-		sessionFactory = HibernateUtil.getSessionFactory();
-		Session session = sessionFactory.getCurrentSession();
 
-		ThreadModel tm = new ThreadModel(title,body, tagList, timeStamp, "", category);
+		session = HibernateUtil.getSessionFactory().getCurrentSession();
+		
+		ThreadModel tm = new ThreadModel(title, body, tagList, timeStamp, 0, category);
 		
 		try{
 			session.beginTransaction();
@@ -47,8 +44,11 @@ public class NewThreadService implements Serializable{
 			session.getTransaction().commit();
 		}
 		catch(HibernateException e){
-			e.printStackTrace();
+			logger.error(e);
 			session.getTransaction().rollback();
+		}
+		finally{
+			session.close();
 		}
 		
 	 	logger.info(tm.toString());

@@ -313,7 +313,3 @@ $("#saved-threads").click(function() {
     $("#arrow-saved-icon").addClass("glyphicon-chevron-up");
   }
 });
-
-$(function(){
-	document.getElementById("newThreadForm:newThreadTitle").placeholder = "Give it a title";	
-});

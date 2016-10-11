@@ -3,55 +3,63 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.Column;
+import javax.persistence.Convert;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import utils.ListConverter;
+
 @Entity
-@Table(name="thread", catalog="totw")
+@Table(name="threads")
 public class ThreadModel {
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	@Column(name = "id", unique = true, nullable = false)
+	@Column(name = "id")
 	private int id;
 	
-	@Column(name = "title", unique = true, nullable = false)
+	@Column(name = "title")
 	private String title;
 	
-	@Column(name = "body", unique = true, nullable = false)
+	@Column(name = "body")
 	private String body;
 	
 	@Column(name = "tags")
+	@Convert(converter = ListConverter.class)
 	private List<String> tags;
 	
-	@Column(name = "timestamp", unique = true, nullable = false)
+	@Column(name = "timestamp")
 	private String timestamp;
 	
-	@Column(name = "author", unique = true, nullable = false)
-	private String author;
+	@Column(name = "authorId")
+	private int authorId;
 	
-	@Column(name = "numberOfLikes", unique = true, nullable = false)
+	@Column(name = "numberOfLikes")
 	private int numberOfLikes;
 	
-	@Column(name = "numberOfDislikes", unique = true, nullable = false)
+	@Column(name = "numberOfDislikes")
 	private int numberOfDislikes;
 	
-	@Column(name = "numberOfComments", unique = true, nullable = false)
+	@Column(name = "numberOfComments")
 	private int numberOfComments;
 	
-	@Column(name = "category", unique = true, nullable = false)
+	@Column(name = "category")
 	private String category;
 	
-	public ThreadModel(String title, String body, ArrayList<String> tags, String timestamp, String author, String category) {
+	public ThreadModel(String title, String body, ArrayList<String> tags, String timestamp, int authorId, String category) {
 		this.title = title;
 		this.body = body;
 		this.tags = tags;
 		this.timestamp = timestamp;
-		this.author = author;
+		this.authorId = authorId;
 		this.category = category;
+	}
+	
+	public ThreadModel(){
+		
 	}
 	
 	public int getId() {
@@ -84,11 +92,11 @@ public class ThreadModel {
 	public void setTimestamp(String timestamp) {
 		this.timestamp = timestamp;
 	}
-	public String getAuthor() {
-		return author;
+	public int getAuthorId() {
+		return authorId;
 	}
-	public void setAuthor(String author) {
-		this.author = author;
+	public void setAuthorId(int authorId) {
+		this.authorId = authorId;
 	}
 	public long getNumberOfLikes() {
 		return numberOfLikes;
@@ -117,12 +125,12 @@ public class ThreadModel {
 	@Override
 	public String toString(){
 		StringBuilder tagStringBuilder = new StringBuilder();
-//		for(String tag:tags){
-//			tagStringBuilder.append(tag);
-//			tagStringBuilder.append(" ");
-//		}
+		for(String tag:tags){
+			tagStringBuilder.append(tag);
+			tagStringBuilder.append(" ");
+		}
 		
-		return "Author:" + this.author +
+		return "Author:" + this.authorId +
 				"\ntitle:" + this.title +
 				"\nbody:" + this.body + 
 				"\ntimestamp:" + this.timestamp +
