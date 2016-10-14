@@ -47,6 +47,8 @@ UI = {
         $("#left-side").addClass('top7px');
         $("#right-side").removeClass('top20px');
         $("#right-side").addClass('top7px');
+        $("#hello-username").removeClass('top28px');
+        $("#hello-username").addClass('top17px');
          // $("#page-content-wrapper").css("padding-top", "60px");
        }
        setTimeout(function(){
@@ -81,6 +83,8 @@ UI = {
           $("#left-side").addClass('top20px');
           $("#right-side").removeClass('top7px');
           $("#right-side").addClass('top20px');
+          $("#hello-username").removeClass('top17px');
+          $("#hello-username").addClass('top28px');
           //$("#page-content-wrapper").css("padding-top", "90px");
         }
         var accountdropdown = document.getElementById('accountdropdown');
@@ -233,6 +237,11 @@ taggle_input.innerHTML = str;
     }
   copyToInputHidden();
 }
+
+
+$(function(){
+	document.getElementById("newThreadForm:newThreadTitle").placeholder = "Give it a title";
+})
 
 function copyToInputHidden(){
 	var tags = document.getElementsByClassName("taggle_text");

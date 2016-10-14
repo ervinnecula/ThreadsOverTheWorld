@@ -1,12 +1,14 @@
 package entities;
 
 import javax.persistence.Column;
+import javax.persistence.Convert;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import converters.UserTypeConverter;
 import utils.UserTypes;
 
 @Entity
@@ -21,6 +23,7 @@ public class UserModel {
 	@Column(name = "nickname")
 	private String nickname;
 	
+	@Convert(converter=UserTypeConverter.class)
 	@Column(name = "type")
 	private UserTypes type;
 	

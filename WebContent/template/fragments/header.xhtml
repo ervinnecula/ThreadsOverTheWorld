@@ -2,20 +2,28 @@
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://java.sun.com/jsf/html"
-      xmlns:ui="http://java.sun.com/jsf/facelets">
-
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:c="http://java.sun.com/jsp/jstl/core"
+      xmlns:p="http://primefaces.org/ui">
 <ui:composition>
        <nav id="header" class="navbar navbar-fixed-top header minWidth600px minimize height64px" role="navigation" style="left: 0px;">
           
-          <div id="left-side" class="left-side top7px">
+        <div id="left-side" class="left-side top7px">
            <button href="#menu-toggle" class="btn btn-default" id="menu-toggle" data-target=".navbar-ex1-collapse">SideBar <span class="glyphicon glyphicon-menu-hamburger"></span></button>
-         </div>
-         <div class="logo height100px" id="logo"><span class="litera">T</span><span id="logo1" class="piece hidden2">hreads&nbsp;</span><span class="litera">O</span><span id="logo2" class="piece hidden2">ver&nbsp;</span><span class="litera">T</span><span id="logo3" class="piece hidden2">he&nbsp;</span><span class="litera">W</span><span id="logo4" class="piece hidden2">orld</span>
+        </div>
+        <div class="logo height100px" id="logo"><span class="litera">T</span><span id="logo1" class="piece hidden2">hreads&nbsp;</span><span class="litera">O</span><span id="logo2" class="piece hidden2">ver&nbsp;</span><span class="litera">T</span><span id="logo3" class="piece hidden2">he&nbsp;</span><span class="litera">W</span><span id="logo4" class="piece hidden2">orld</span>
           <br/>
           <div id="moto" class="moto" style="display: none;">The place where you can speak freely!</div>
         </div>
+        <div id="hello-username" class="top17px">
+        	<c:if test="#{not empty accountBean.nickname}">
+        		<p:outputPanel autoUpdate="true">
+        			<h:outputText id="hello-username-out" value="Hi, #{accountBean.nickname}!"/>
+        		</p:outputPanel>
+        	</c:if>
+        </div>
         <div id="right-side" class="right-side top7px">
-          <button class="btn btn-default" id="sign-in-button" data-toggle="modal" data-target="#myModal">Sign In</button>
+          <button class="btn btn-default" id="sign-in-button" data-toggle="modal" data-target="#myModal">Auth</button>
         </div>
       </nav>
 </ui:composition>

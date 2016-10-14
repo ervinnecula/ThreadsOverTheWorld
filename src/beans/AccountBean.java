@@ -9,11 +9,11 @@ import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.SessionScoped;
-import javax.faces.component.UIComponent;
 import javax.faces.context.FacesContext;
 import javax.servlet.http.HttpSession;
 import javax.servlet.http.Part;
 
+import org.primefaces.context.RequestContext;
 import org.primefaces.model.DefaultStreamedContent;
 import org.primefaces.model.StreamedContent;
 
@@ -114,18 +114,37 @@ public class AccountBean implements Serializable  {
 			session = (HttpSession) FacesContext.getCurrentInstance()
 					.getExternalContext().getSession(false);
 			session.setAttribute("nickname", nickname);
+			
+//			setPassword(null);
+//			setNickname(null);
+			
+			RequestContext.getCurrentInstance().
+ 						execute("clearLoginRegister();hideModal();");
+			
 		}
 		else if(answer == AuthAnswerEnum.L_WRONG_PASS){
 			FacesContext.getCurrentInstance().
-			addMessage("loginForm:messages", new FacesMessage(FacesMessage.SEVERITY_ERROR, "Mmmmm...","Password is so so wrong."));
+			addMessage("loginForm:messages", new FacesMessage(FacesMessage.SEVERITY_ERROR,
+					"Mmmmm...","Password is so so wrong."));
+			
+			RequestContext.getCurrentInstance().
+						execute("shakeModal()");
 		}
 		else if(answer == AuthAnswerEnum.L_WRONG_NICKNAME){
 			FacesContext.getCurrentInstance().
-			addMessage("loginForm:messages", new FacesMessage(FacesMessage.SEVERITY_ERROR, "Not good.","This nickname doesn't even exist"));
+			addMessage("loginForm:messages", new FacesMessage(FacesMessage.SEVERITY_ERROR,
+					"Not good.","This nickname doesn't even exist"));
+			
+			RequestContext.getCurrentInstance().
+						execute("shakeModal();");
 		}
 		else if(answer == AuthAnswerEnum.L_QUERY_ERROR){
 			FacesContext.getCurrentInstance().
-			addMessage("loginForm:messages", new FacesMessage(FacesMessage.SEVERITY_FATAL, "Something went wrooong.","Checking your account went wrong, try again later. We're so so sorry for this."));
+			addMessage("loginForm:messages", new FacesMessage(FacesMessage.SEVERITY_FATAL, 
+					"Something went wrooong.","Checking your account went wrong, try again later. We're so so sorry for this."));
+			
+			RequestContext.getCurrentInstance().
+						execute("shakeModal()");
 		}
 	}
 	
@@ -134,23 +153,47 @@ public class AccountBean implements Serializable  {
 		
 		if(answer == AuthAnswerEnum.R_GOOD){
 			FacesContext.getCurrentInstance().
-			addMessage("registerForm:messages", new FacesMessage(FacesMessage.SEVERITY_ERROR, "All good","Please login."));	
+			addMessage("registerForm:messages", new FacesMessage(FacesMessage.SEVERITY_INFO, "All good","Please login."));	
+			
+			RequestContext.getCurrentInstance().
+			 			execute("switchRegisterToLogin()");
+			
+			setNickname(null);
+			setEmail(null);
+			setPassword(null);
 		}
 		else if(answer == AuthAnswerEnum.R_NICK_TAKEN){
 			FacesContext.getCurrentInstance().
-			addMessage("registerForm:messages", new FacesMessage(FacesMessage.SEVERITY_ERROR, "Nickname taken.","Try to think of something else"));
+			addMessage("registerForm:messages", new FacesMessage(FacesMessage.SEVERITY_ERROR,
+					"Nickname taken.","Try to think of something else"));
+			
+			RequestContext.getCurrentInstance().
+						execute("shakeModal()");
 		}
 		else if(answer == AuthAnswerEnum.R_PASS_NO_ALPHANUMERIC){
 			FacesContext.getCurrentInstance().
-			addMessage("registerForm:messages", new FacesMessage(FacesMessage.SEVERITY_ERROR, "Bad password choice.","Try something that contains both numbers and letters."));	
+			addMessage("registerForm:messages", new FacesMessage(FacesMessage.SEVERITY_ERROR,
+					"Bad password choice.","Try something that contains both numbers and letters."));	
+			
+			RequestContext.getCurrentInstance().
+						execute("shakeModal()");
 		}
 		else if(answer == AuthAnswerEnum.R_PASS_SHORT){
 			FacesContext.getCurrentInstance().
-			addMessage("registerForm:messages", new FacesMessage(FacesMessage.SEVERITY_ERROR, "Bad password choice.","Try something with more than 8 characters."));
+			addMessage("registerForm:messages", new FacesMessage(FacesMessage.SEVERITY_ERROR,
+					"Bad password choice.","Try something with more than 8 characters."));
+			
+			RequestContext.getCurrentInstance().
+						execute("shakeModal()");
 		}
 		else if(answer == AuthAnswerEnum.R_QUERY_ERROR){
 			FacesContext.getCurrentInstance().
-			addMessage("registerForm:messages", new FacesMessage(FacesMessage.SEVERITY_ERROR, "Something went wrooong.","Checking your account went wrong, try again later. We're so so sorry for this."));
+			addMessage("registerForm:messages", new FacesMessage(FacesMessage.SEVERITY_ERROR,
+					"Something went wrooong.","Checking your account went wrong, try again later. "
+							+ "We're so so sorry for this."));
+			
+			RequestContext.getCurrentInstance().
+						execute("shakeModal()");
 		}
 		
 	}
