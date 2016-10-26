@@ -35,7 +35,6 @@ public class AccountBean implements Serializable  {
 	private String password;
 	private Part newPicture;
 	private StreamedContent picture;
-	private HttpSession session;
 	
 	public String getNickname() {
 		return nickname;
@@ -111,9 +110,11 @@ public class AccountBean implements Serializable  {
 		AuthAnswerEnum answer = accountService.loginService(nickname, password);
 		
 		if(answer == AuthAnswerEnum.L_MATCH){
-			session = (HttpSession) FacesContext.getCurrentInstance()
-					.getExternalContext().getSession(false);
+			HttpSession session = (HttpSession) FacesContext.getCurrentInstance()
+					.getExternalContext().getSession(false); 
+		        
 			session.setAttribute("nickname", nickname);
+			session.setAttribute("password", password);
 			
 //			setPassword(null);
 //			setNickname(null);

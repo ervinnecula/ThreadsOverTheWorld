@@ -9,6 +9,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 import converters.UserTypeConverter;
+//import converters.UserTypeConverter;
 import utils.UserTypes;
 
 @Entity
